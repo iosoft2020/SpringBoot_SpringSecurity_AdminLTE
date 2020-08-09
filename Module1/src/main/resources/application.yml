@@ -1,0 +1,19 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: Module1
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.100.197:8848
+  thymeleaf:
+    cache: false
+
+logging:
+  level:
+    com.iosoft2020.Module1: debug
+    root: warn
+  pattern:
+    console: "%d{yyyy-MM-dd} [%thread] - %msg%n"
