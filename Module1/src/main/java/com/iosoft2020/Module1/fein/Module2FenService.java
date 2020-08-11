@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @FeignClient(value = "Module2")
 public interface Module2FenService {
 
-	@RequestMapping("/Module2/list")
-	public String list();
-
+    @RequestMapping("/Module2/list")
+    public String list();
 
 }
