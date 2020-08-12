@@ -23,10 +23,10 @@ sudo systemctl start docker<br>
 
 ・docker install mysql5.7<br>
 docker pull mysql:5.7<br>
-docker run -p 3306:3306 --name mysql \<br>
--v /mydata/mysql/log:/var/log/mysql \<br>
--v /mydata/mysql/data:/var/lib/mysql \<br>
--v /mydata/mysql/conf:/etc/mysql \<br>
--e MYSQL_ROOT_PASSWORD=root \<br>
--d mysql:5.7<br>
+docker run -p 3306:3306 --name mysql \
+-v /mydata/mysql/log:/var/log/mysql \
+-v /mydata/mysql/data:/var/lib/mysql \
+-v /mydata/mysql/conf:/etc/mysql \
+-e MYSQL_ROOT_PASSWORD=root \
+-d mysql:5.7
 -----------------set env end-----------------<br>
