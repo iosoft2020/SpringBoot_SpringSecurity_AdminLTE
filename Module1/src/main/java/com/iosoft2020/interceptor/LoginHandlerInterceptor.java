@@ -1,4 +1,4 @@
-package com.iosoft2020.Module1.interceptor;
+package com.iosoft2020.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

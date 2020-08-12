@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: Module1
+  datasource:
+    #MySQL配置
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.56.66:3306/SpringBoot_SpringSecurity_AdminLTE?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: root
   cloud:
     nacos:
       discovery:
@@ -17,3 +23,12 @@ logging:
     root: warn
   pattern:
     console: "%d{yyyy-MM-dd} [%thread] - %msg%n"
+
+#mybatis-plus:
+#  global-config:
+#    db-config:
+#      id-type: auto
+#  mapper-locations: classpath:/mapper/**/*.xml
+mybatis:
+  type-aliases-package: com.iosoft2020.entity
+  mapper-locations: classpath:/mapper/**/*.xml

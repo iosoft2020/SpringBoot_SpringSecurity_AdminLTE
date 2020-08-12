@@ -1,4 +1,4 @@
-package com.iosoft2020.Module1.fein;
+package com.iosoft2020.fein;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

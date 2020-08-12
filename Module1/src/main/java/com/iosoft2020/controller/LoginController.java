@@ -1,4 +1,4 @@
-package com.iosoft2020.Module1.controller;
+package com.iosoft2020.controller;
 
 import java.util.Map;
 

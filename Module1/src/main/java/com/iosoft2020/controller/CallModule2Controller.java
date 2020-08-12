@@ -1,10 +1,10 @@
-package com.iosoft2020.Module1.controller;
+package com.iosoft2020.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.iosoft2020.Module1.fein.Module2FenService;
+import com.iosoft2020.fein.Module2FenService;
 
 @RestController
 @RequestMapping("/Module1")
