@@ -28,5 +28,5 @@ docker run -p 3306:3306 --name mysql \
 -v /mydata/mysql/data:/var/lib/mysql \
 -v /mydata/mysql/conf:/etc/mysql \
 -e MYSQL_ROOT_PASSWORD=root \
--d mysql:5.7
+-d mysql:5.7<br>
 -----------------set env end-----------------<br>
