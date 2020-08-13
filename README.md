@@ -1,5 +1,17 @@
 # SpringBoot_SpringSecurity_AdminLTE
------------------set env start-----------------<br>
+<h1>technology stacks</h1><br>
+<ul>
+  <li>Springboot</li>
+  <li>SpringSecurity</li>
+  <li>AdminLTE3</li>
+  <li>Java11</li>
+  <li>MyBatis</li>
+  <li>Thymeleaf</li>
+  <li>MySql5.7</li>
+  <li>Nacos</li> 
+</ul>
+
+<h1>set env</h1><br>
 ・vagrant download<br>
 https://www.vagrantup.com/downloads.html<br>
 
@@ -29,7 +41,10 @@ docker run -p 3306:3306 --name mysql \
 -v /mydata/mysql/conf:/etc/mysql \
 -e MYSQL_ROOT_PASSWORD=root \
 -d mysql:5.7<br>
------------------set env end-----------------<br>
 
------------------project html-----------------
-![alt tag](http://url/to/img.png)
+<h1>project html</h1><br>
+<img src="https://github.com/iosoft2020/SpringBoot_SpringSecurity_AdminLTE/blob/master/images/login.png" alt="login" title="login">
+<img src="https://github.com/iosoft2020/SpringBoot_SpringSecurity_AdminLTE/blob/master/images/index.png" alt="index" title="index">
+<img src="https://github.com/iosoft2020/SpringBoot_SpringSecurity_AdminLTE/blob/master/images/Employees.png" alt="Employees" title="Employees">
+<img src="https://github.com/iosoft2020/SpringBoot_SpringSecurity_AdminLTE/blob/master/images/AddEmployee.png" alt="AddEmployee" title="AddEmployee">
+<img src="https://github.com/iosoft2020/SpringBoot_SpringSecurity_AdminLTE/blob/master/images/EditEmployee.png" alt="EditEmployee" title="EditEmployee">
