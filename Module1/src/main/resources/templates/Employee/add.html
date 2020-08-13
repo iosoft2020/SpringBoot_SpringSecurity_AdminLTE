@@ -35,7 +35,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Add Employees</h1>
+            <h1 th:text="${employee}==null?'Add Employees':'Edit Employees'">Add Employees</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
