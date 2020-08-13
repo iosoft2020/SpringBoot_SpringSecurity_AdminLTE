@@ -1,5 +1,5 @@
 # SpringBoot_SpringSecurity_AdminLTE
-<h1>set env start</h1><br>
+<h1>set env</h1><br>
 ・vagrant download<br>
 https://www.vagrantup.com/downloads.html<br>
 
@@ -29,9 +29,8 @@ docker run -p 3306:3306 --name mysql \
 -v /mydata/mysql/conf:/etc/mysql \
 -e MYSQL_ROOT_PASSWORD=root \
 -d mysql:5.7<br>
------------------set env end-----------------<br>
 
------------------project html-----------------<br>
+<h1>project html</h1><br>
 <img src="https://github.com/iosoft2020/SpringBoot_SpringSecurity_AdminLTE/blob/master/images/login.png" alt="login" title="login">
 <img src="https://github.com/iosoft2020/SpringBoot_SpringSecurity_AdminLTE/blob/master/images/index.png" alt="index" title="index">
 <img src="https://github.com/iosoft2020/SpringBoot_SpringSecurity_AdminLTE/blob/master/images/Employees.png" alt="Employees" title="Employees">
