@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 import com.iosoft2020.entity.Employee;
+import com.iosoft2020.exception.SystemException;
 import com.iosoft2020.service.DepartmentService;
 import com.iosoft2020.service.EmployeeService;
 
@@ -24,6 +25,9 @@ public class EmployeeController {
 
     @GetMapping("/employees")
     public String list(Model model) {
+        if(true) {
+            throw new SystemException();
+        }
         model.addAttribute("employees", employeeService.getAll());
         return "Employee/list";
     }
