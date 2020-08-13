@@ -1,6 +1,8 @@
 package com.iosoft2020.entity;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
@@ -11,7 +13,8 @@ public class Employee {
     private String name;
     private String email;
     private String gender;
-    private String deparment;
-    private LocalDateTime birth;
+    private Department department;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate birth;
 
 }

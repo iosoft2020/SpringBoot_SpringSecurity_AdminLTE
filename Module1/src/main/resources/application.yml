@@ -16,10 +16,17 @@ spring:
         server-addr: 192.168.100.197:8848
   thymeleaf:
     cache: false
+  mvc: 
+     hiddenmethod:
+       filter:
+         enabled: true
+#  mvc:
+#    date-format: yyyy/MM/dd
+
 
 logging:
   level:
-    com.iosoft2020.Module1: debug
+    com.iosoft2020: debug
     root: warn
   pattern:
     console: "%d{yyyy-MM-dd} [%thread] - %msg%n"

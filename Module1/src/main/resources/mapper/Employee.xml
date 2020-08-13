@@ -3,7 +3,55 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.iosoft2020.mapper.EmployeeMapper">
-    <select id="getAll" resultType="employee">
+    <resultMap id="employeesMap" type="employee">
+        <association property="department"
+           column="department"
+           select="com.iosoft2020.mapper.DepartmentMapper.getById">
+        </association>
+    </resultMap>
+
+    <select id="getById" parameterType="int" resultMap="employeesMap">
+        SELECT * FROM employee where id=#{id};
+    </select>
+
+    <select id="getAll" resultMap="employeesMap">
         SELECT * FROM employee;
     </select>
+
+    <insert id="save" parameterType="employee">
+        insert into employee
+        (
+          name
+          , email
+          , gender
+          , department
+          , birth
+        )
+        values
+        (
+          #{name}
+          , #{email}
+          , #{gender}
+          , #{department.id}
+          , #{birth}
+
+        )
+    </insert>
+
+    <update id="update" parameterType="employee">
+        update employee set
+          name = #{name}
+          , email = #{email}
+          , gender = #{gender}
+          , department = #{department.id}
+          , birth = #{birth}
+		where
+		  id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        delete from employee
+		where id = #{id}
+    </delete>
+
 </mapper>

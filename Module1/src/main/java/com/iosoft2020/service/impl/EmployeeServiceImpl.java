@@ -20,4 +20,27 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeMapper.getAll();
     }
 
+    @Override
+    public void save(Employee employee) {
+        employeeMapper.save(employee);
+
+    }
+
+    @Override
+    public Employee getById(int id) {
+        return employeeMapper.getById(id);
+    }
+
+    @Override
+    public void update(Employee employee) {
+        employeeMapper.update(employee);
+
+    }
+
+    @Override
+    public void delete(int id) {
+        employeeMapper.delete(id);
+
+    }
+
 }
