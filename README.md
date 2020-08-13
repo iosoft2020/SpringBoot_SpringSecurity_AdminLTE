@@ -1,12 +1,12 @@
 # SpringBoot_SpringSecurity_AdminLTE
 <h1>technology stacks</h1><br>
-<ul>Springboot</ul>
-<ul>SpringSecurity</ul>
-<ul>AdminLTE3</ul>
-<ul>Java11</ul>
-<ul>MyBatis</ul>
-<ul>Thymeleaf</ul>
-<li
+<ul>
+<li>Springboot</li>
+<li>SpringSecurity</li>
+<li>AdminLTE3</li>
+<li>Java11</li>
+<li>MyBatis</li>
+<li>Thymeleaf</li>
 </ul>
 
 <h1>set env</h1><br>
