@@ -49,4 +49,4 @@ docker run -p 3306:3306 --name mysql \
 <img src="https://github.com/iosoft2020/SpringBoot_SpringSecurity_AdminLTE/blob/master/images/AddEmployee.png" alt="AddEmployee" title="AddEmployee">
 <img src="https://github.com/iosoft2020/SpringBoot_SpringSecurity_AdminLTE/blob/master/images/EditEmployee.png" alt="EditEmployee" title="EditEmployee">
 <img src="https://github.com/iosoft2020/SpringBoot_SpringSecurity_AdminLTE/blob/master/images/404.png" alt="404" title="404">
-<img src="https://github.com/iosoft2020/SpringBoot_SpringSecurity_AdminLTE/blob/master/images/500.png" alt="500" title="500">
+
