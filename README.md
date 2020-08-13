@@ -7,6 +7,7 @@
   <li>Java11</li>
   <li>MyBatis</li>
   <li>Thymeleaf</li>
+  <li>MySql5.7</li>
   <li>Nacos</li> 
 </ul>
 
