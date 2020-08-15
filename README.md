@@ -23,11 +23,25 @@ vagrant init centos/7<br>
 vagrant plugin install vagrant-disksize<br>
 vagrant up<br>
 
+・add attr to Vagrantfile
+config.disksize.size = '300GB'
+
+・fdisk
+fdisk /dev/sda
+d
+n
+p
+1
+enter
+enter
+p
+w
+reboot
+xfs_growfs / -d
+df -hT
+
 ・vagrant ssh command<br>
 vagrant ssh<br>
-
-・install centos7 lvm2<br>
-yum install -y lvm2
 
 ・centos7 install docker<br>
 yum remove docker docker-common docker-selinux docker-engine<br>
