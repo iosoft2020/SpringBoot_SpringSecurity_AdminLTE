@@ -25,6 +25,9 @@ vagrant up<br>
 ・vagrant ssh command<br>
 vagrant ssh<br>
 
+・install centos7 lvm2<br>
+yum install -y lvm2
+
 ・centos7 install docker<br>
 yum remove docker docker-common docker-selinux docker-engine<br>
 yum install -y yum-utils device-mapper-persistent-data lvm2<br>
