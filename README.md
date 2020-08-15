@@ -1,8 +1,8 @@
 # SpringBoot_SpringSecurity_AdminLTE
 <h1>technology stacks</h1><br>
 <ul>
-  <li>Springboot</li>
-  <li>SpringSecurity</li>
+  <li>Springboot2.2.6</li>
+  <li>SpringSecurity2.2.6</li>
   <li>AdminLTE3</li>
   <li>Java11</li>
   <li>MyBatis</li>
