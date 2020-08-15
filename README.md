@@ -20,6 +20,7 @@ https://www.virtualbox.org/wiki/Downloads<br>
 
 ・vagrant install&start centos7 command<br>
 vagrant init centos/7<br>
+vagrant plugin install vagrant-disksize<br>
 vagrant up<br>
 
 ・vagrant ssh command<br>
