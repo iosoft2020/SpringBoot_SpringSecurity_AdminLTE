@@ -1,4 +1,20 @@
-drop table employee;
+drop table if exists sys_user;
+create table sys_user(
+    uid bigint not null,
+    username varchar(50) not null,
+    password varchar(100) not null,
+    status int(1),
+    rid bigint not null
+);
+
+drop table if exists sys_role;
+create table sys_role(
+    rid bigint not null,
+    role_name varchar(30) not null,
+    role_desc varchar(60) not null
+);
+
+drop table if exists employee;
 create table employee
 (
    id       bigint not null auto_increment
@@ -10,7 +26,7 @@ create table employee
    ,primary key (id)
 );
 
-drop table department;
+drop table if exists department;
 create table department
 (
    id       bigint not null auto_increment

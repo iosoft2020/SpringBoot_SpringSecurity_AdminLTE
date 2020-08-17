@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,6 +36,8 @@
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">Index</h1>
           </div><!-- /.col -->
+          <div sec:authentication="principal.authorities">
+          </div>
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>

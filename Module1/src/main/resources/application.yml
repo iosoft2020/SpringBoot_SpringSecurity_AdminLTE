@@ -2,18 +2,18 @@ server:
   port: 9001
 
 spring:
-  application:
-    name: Module1
+#  application:
+#    name: Module1
   datasource:
     #MySQL配置
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://192.168.56.66:3306/SpringBoot_SpringSecurity_AdminLTE?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
     password: root
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 192.168.100.197:8848
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 192.168.100.197:8848
   thymeleaf:
     cache: false
   mvc: 
@@ -24,12 +24,12 @@ spring:
 #    date-format: yyyy/MM/dd
 
 
-logging:
-  level:
-    com.iosoft2020: debug
-    root: warn
-  pattern:
-    console: "%d{yyyy-MM-dd} [%thread] - %msg%n"
+#logging:
+#  level:
+#    com.iosoft2020: debug
+#    root: warn
+#  pattern:
+#    console: "%d{yyyy-MM-dd} [%thread] - %msg%n"
 
 #mybatis-plus:
 #  global-config:
@@ -37,5 +37,6 @@ logging:
 #      id-type: auto
 #  mapper-locations: classpath:/mapper/**/*.xml
 mybatis:
+  configuration:    map-underscore-to-camel-case: true
   type-aliases-package: com.iosoft2020.entity
   mapper-locations: classpath:/mapper/**/*.xml

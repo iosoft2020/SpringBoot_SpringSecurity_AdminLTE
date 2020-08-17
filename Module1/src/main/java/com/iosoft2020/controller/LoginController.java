@@ -1,28 +1,30 @@
 package com.iosoft2020.controller;
 
-import java.util.Map;
-
-import javax.servlet.http.HttpSession;
-
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LoginController {
 
-    @PostMapping("/login")
-    public String login(@RequestParam("username") String username, @RequestParam("password") String password,
-            Map<String, Object> map, HttpSession session) {
+//    @PostMapping("/login")
+//    public String login(@RequestParam("username") String username, @RequestParam("password") String password,
+//            Map<String, Object> map, HttpSession session) {
+//
+//        if (StringUtils.isNotBlank(username) && "123456".equals(password)) {
+//            session.setAttribute("username", username);
+//            return "redirect:/menu.html";
+//        } else {
+//            map.put("msg", "Invalid username or password.");
+//            return "login";
+//        }
+//    }
 
-        if (StringUtils.isNotBlank(username) && "123456".equals(password)) {
-            session.setAttribute("username", username);
-            return "redirect:/menu.html";
-        } else {
-            map.put("msg", "Invalid username or password.");
-            return "login";
-        }
+    @GetMapping("/login")
+    public ModelAndView login(String error){
+         ModelAndView modelAndView = new ModelAndView("/login");
+         modelAndView.addObject("error", error);
+        return modelAndView;
     }
 
 }

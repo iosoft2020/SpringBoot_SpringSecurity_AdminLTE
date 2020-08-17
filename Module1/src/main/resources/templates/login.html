@@ -28,10 +28,14 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+<!--       <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p> -->
+
+      <p style="color: red" th:if="${param.error}" th:text="${session?.SPRING_SECURITY_LAST_EXCEPTION?.message}" ></p>
+
+
       <form th:action="@{/login}" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="UserName" name="username">
+          <input type="text" class="form-control" placeholder="UserName" name="username" >
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
