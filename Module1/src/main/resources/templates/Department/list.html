@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>IOSOFT</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" th:href="@{/webjars/AdminLTE/3.0.5/plugins/fontawesome-free/css/all.min.css}">
+  <!-- IonIcons -->
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" th:href="@{/webjars/AdminLTE/3.0.5/dist/css/adminlte.min.css}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+  <!-- tobbar -->
+  <div th:replace="commons/bar::topbar"></div>
+  <!-- /.tobbar -->
+
+  <!-- menubar -->
+  <div th:replace="commons/bar::menubar(activeUri='Departments')"></div>
+  <!-- /.menubar -->
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Departments</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <h2>
+        <a class="btn btn-success btn-sm" href="#" th:href="@{/department}">
+            <i class="fas fa-trash"></i>Add</a>
+      </h2>
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-body p-0">
+          <table id="example2" class="table table-striped projects">
+              <thead>
+                  <tr>
+                      <th style="width: 1%">
+                          #
+                      </th>
+                      <th style="width: 15%">
+                          Name
+                      </th>
+                      <th style="width: 20%">
+                      </th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr th:each="department:${departments}">
+                      <td th:text="${department.id}"></td>
+                      <td th:text="${department.departmentName}"></td>
+                      <td class="project-actions text-right">
+                          <a class="btn btn-info btn-sm" th:href="@{/department/}+${department.id}">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                          <button th:attr="del_uri=@{/department/}+${department.id}" class="btn btn-danger btn-sm deleteBtn" >
+	                          <i class="fas fa-trash"></i>Delete</button>
+
+
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+          <form id="deleteEmployeeForm" method="post" >
+	          <input type="hidden" name="_method" value="delete"/>
+	      </form>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+<!--               <div class="clearfix"> -->
+<!--                 <ul class="pagination  m-0 float-right"> -->
+<!--                   <li class="page-item"><a class="page-link" href="#">&laquo;</a></li> -->
+<!--                   <li class="page-item"><a class="page-link" href="#">1</a></li> -->
+<!--                   <li class="page-item"><a class="page-link" href="#">2</a></li> -->
+<!--                   <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+<!--                   <li class="page-item"><a class="page-link" href="#">&raquo;</a></li> -->
+<!--                 </ul> -->
+<!--               </div> -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- footbar -->
+  <div th:replace="commons/bar::footbar"></div>
+  <!-- /.footbar -->
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script th:src="@{/webjars/AdminLTE/3.0.5/plugins/jquery/jquery.min.js}"></script>
+<!-- Bootstrap -->
+<script th:src="@{/webjars/AdminLTE/3.0.5/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<!-- AdminLTE -->
+<script th:src="@{/webjars/AdminLTE/3.0.5/dist/js/adminlte.js}"></script>
+
+<!-- OPTIONAL SCRIPTS -->
+<script th:src="@{/webjars/AdminLTE/3.0.5/plugins/chart.js/Chart.min.js}"></script>
+<script th:src="@{/webjars/AdminLTE/3.0.5/dist/js/demo.js}"></script>
+<script th:src="@{/webjars/AdminLTE/3.0.5/dist/js/pages/dashboard3.js}"></script>
+<!-- page script -->
+<script>
+    $(".deleteBtn").click(function(){
+        $("#deleteEmployeeForm").attr("action",$(this).attr("del_uri")).submit();
+        return false;
+    });
+</script>
+
+</body>
+</html>

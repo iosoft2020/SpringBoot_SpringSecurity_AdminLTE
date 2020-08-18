@@ -10,4 +10,28 @@
     <select id="getById" parameterType="int" resultType="department">
         SELECT * FROM department where id=#{id};
     </select>
+
+    <insert id="save" parameterType="department">
+        insert into department
+        (
+          departmentName
+        )
+        values
+        (
+          #{departmentName}
+
+        )
+    </insert>
+
+    <update id="update" parameterType="department">
+        update department set
+          departmentName = #{departmentName}
+		where
+		  id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        delete from department
+		where id = #{id}
+    </delete>
 </mapper>

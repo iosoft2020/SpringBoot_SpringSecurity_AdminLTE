@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>IOSOFT</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" th:href="@{/webjars/AdminLTE/3.0.5/plugins/fontawesome-free/css/all.min.css}">
+  <!-- IonIcons -->
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" th:href="@{/webjars/AdminLTE/3.0.5/dist/css/adminlte.min.css}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+  <!-- tobbar -->
+  <div th:replace="commons/bar::topbar"></div>
+  <!-- /.tobbar -->
+
+  <!-- menubar -->
+  <div th:replace="commons/bar::menubar(activeUri='Users')"></div>
+  <!-- /.menubar -->
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 th:text="${user}==null?'Add User':'Edit User'">Add User</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+	<!-- body -->
+	<section class="content">
+
+	    <!-- box col-12 -->
+	    <div class="box box-primary">
+	        <form th:action="@{/user}" method="post">
+	        <input type="hidden" name="_method" value="put" th:if="${user}!=null">
+	        <input type="hidden" name="id" th:if="${user}!=null" th:value="${user.id}">
+	        <div class="box-body">
+	                <div class="form-group">
+	                    <label>Name</label>
+	                    <input type="text" class="form-control" name="username" th:value="${user}!=null?${user.username}" placeholder="iosoft2020">
+	                </div>
+	                <div class="form-group" th:if="${user}==null">
+	                    <label>Password</label>
+	                    <input type="text" class="form-control" name="password" th:value="${user}!=null?${user.password}" placeholder="123456">
+	                </div>
+	                <div class="form-group">
+	                    <label>Status</label>
+		                <div class="radio-inline">
+		                    <label>
+		                        <input type="radio" name="status" value="0" th:checked="${user}!=null?${user.status}=='0'"><b>Used</b>
+		                    </label>
+		                </div>
+		                <div class="radio-inline">
+		                    <label>
+		                        <input type="radio" name="status" value="1" th:checked="${user}!=null?${user.status}=='1'"><b>Invalid</b>
+		                    </label>
+		                </div>
+	                </div>
+	                <div class="form-group">
+	                    <label>Role</label>
+	                    <select class="form-control" name="role.id">
+	                        <option th:each="role:${roles}" th:value="${role.id}" th:text="${role.name}" th:selected="${user}!=null?${role.id}==${user.role.id}" ></option>
+	                    </select>
+	                </div>
+	        </div>
+	        <div class="box-footer">
+	            <button type="submit" class="btn btn-primary" th:text="${user}==null?'Add':'Edit'">Submit</button>
+	        </div>
+	        </form>
+	    </div>
+	</section>
+
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- footbar -->
+  <div th:replace="commons/bar::footbar"></div>
+  <!-- /.footbar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script th:src="@{/webjars/AdminLTE/3.0.5/plugins/jquery/jquery.min.js}"></script>
+<!-- Bootstrap -->
+<script th:src="@{/webjars/AdminLTE/3.0.5/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<!-- AdminLTE -->
+<script th:src="@{/webjars/AdminLTE/3.0.5/dist/js/adminlte.js}"></script>
+
+<!-- OPTIONAL SCRIPTS -->
+<script th:src="@{/webjars/AdminLTE/3.0.5/plugins/chart.js/Chart.min.js}"></script>
+<script th:src="@{/webjars/AdminLTE/3.0.5/dist/js/demo.js}"></script>
+<script th:src="@{/webjars/AdminLTE/3.0.5/dist/js/pages/dashboard3.js}"></script>
+<!-- page script -->
+
+</body>
+</html>

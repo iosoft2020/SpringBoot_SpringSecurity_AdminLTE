@@ -9,12 +9,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 import lombok.Data;
 
 @Data
-public class SysUser implements UserDetails {
-    private Integer uid;
+public class User implements UserDetails {
+    private Integer id;
     private String username;
     private String password;
     private Integer status; // 1:enable
-    private List<SysRole> roles;
+    private List<Role> roles;
+    private Role role;
+    private Integer rid;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

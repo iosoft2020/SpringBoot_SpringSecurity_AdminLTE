@@ -57,9 +57,21 @@
                 </a>
               </li>
               <li class="nav-item" >
-                <a th:href="@{/employees}" class="nav-link" th:class="${activeUri=='Module2s'?'nav-link active':'nav-link'}" >
+                <a th:href="@{/departments}" class="nav-link" th:class="${activeUri=='Departments'?'nav-link active':'nav-link'}" >
                   <i class="far fa-circle nav-icon"></i>
                   <p >Department</p>
+                </a>
+              </li>
+              <li class="nav-item" >
+                <a th:href="@{/users}" class="nav-link" th:class="${activeUri=='Users'?'nav-link active':'nav-link'}" >
+                  <i class="far fa-circle nav-icon"></i>
+                  <p >User</p>
+                </a>
+              </li>
+              <li class="nav-item" >
+                <a th:href="@{/roles}" class="nav-link" th:class="${activeUri=='Roles'?'nav-link active':'nav-link'}" >
+                  <i class="far fa-circle nav-icon"></i>
+                  <p >Role</p>
                 </a>
               </li>
             </ul>

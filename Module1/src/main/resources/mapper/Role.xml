@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iosoft2020.mapper.RoleMapper">
+    <select id="getAll" resultType="role">
+        SELECT * FROM sys_role;
+    </select>
+
+    <select id="getById" parameterType="int" resultType="role">
+        SELECT * FROM sys_role where id=#{id};
+    </select>
+
+    <insert id="save" parameterType="role">
+        insert into sys_role
+        (
+          name
+          , role_desc
+        )
+        values
+        (
+          #{name}
+          , #{roleDesc}
+
+        )
+    </insert>
+
+    <update id="update" parameterType="role">
+        update sys_role set
+          name = #{name}
+          , role_desc = #{roleDesc}
+		where
+		  id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        delete from sys_role
+		where id = #{id}
+    </delete>
+</mapper>

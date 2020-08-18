@@ -20,4 +20,26 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentMapper.getAll();
     }
 
+    @Override
+    public void save(Department department) {
+        departmentMapper.save(department);
+
+    }
+
+    @Override
+    public Department getById(int id) {
+        return departmentMapper.getById(id);
+    }
+
+    @Override
+    public void update(Department department) {
+        departmentMapper.update(department);
+
+    }
+
+    @Override
+    public void delete(int id) {
+        departmentMapper.delete(id);
+
+    }
 }

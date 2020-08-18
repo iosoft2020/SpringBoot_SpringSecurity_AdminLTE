@@ -8,4 +8,12 @@ public interface DepartmentService {
 
     public List<Department> getAll();
 
+    public void save(Department department);
+
+    public void update(Department department);
+
+    public Department getById(int id);
+
+    public void delete(int id);
+
 }

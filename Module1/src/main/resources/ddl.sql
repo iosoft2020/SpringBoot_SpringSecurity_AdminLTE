@@ -1,17 +1,19 @@
 drop table if exists sys_user;
 create table sys_user(
-    uid bigint not null,
+    id bigint not null auto_increment,
     username varchar(50) not null,
     password varchar(100) not null,
     status int(1),
     rid bigint not null
+    ,primary key (id)
 );
 
 drop table if exists sys_role;
 create table sys_role(
-    rid bigint not null,
-    role_name varchar(30) not null,
+    id bigint not null auto_increment,
+    name varchar(30) not null,
     role_desc varchar(60) not null
+    ,primary key (id)
 );
 
 drop table if exists employee;

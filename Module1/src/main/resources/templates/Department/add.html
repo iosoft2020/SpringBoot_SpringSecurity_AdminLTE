@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,58 +12,57 @@
   <!-- IonIcons -->
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet"th:href="@{/webjars/AdminLTE/3.0.5/dist/css/adminlte.min.css}">
+  <link rel="stylesheet" th:href="@{/webjars/AdminLTE/3.0.5/dist/css/adminlte.min.css}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
+
   <!-- tobbar -->
   <div th:replace="commons/bar::topbar"></div>
   <!-- /.tobbar -->
 
   <!-- menubar -->
-  <div th:replace="commons/bar::menubar(activeUri='menu.html')"></div>
+  <div th:replace="commons/bar::menubar(activeUri='Department')"></div>
   <!-- /.menubar -->
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
+    <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Index</h1>
-          </div><!-- /.col -->
-<!--           <div sec:authentication="principal.authorities"> -->
-<!--           </div> -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
-    <div class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-6">
+            <h1 th:text="${department}==null?'Add Department':'Edit Department'">Add Department</h1>
           </div>
-
         </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
+      </div><!-- /.container-fluid -->
+    </section>
+
+	<!-- body -->
+	<section class="content">
+
+	    <!-- box col-12 -->
+	    <div class="box box-primary">
+	        <form th:action="@{/department}" method="post">
+	        <input type="hidden" name="_method" value="put" th:if="${department}!=null">
+	        <input type="hidden" name="id" th:if="${department}!=null" th:value="${department.id}">
+	        <div class="box-body">
+	                <div class="form-group">
+	                    <label>Name</label>
+	                    <input type="text" class="form-control" name="departmentName" th:value="${department}!=null?${department.departmentName}" placeholder="iosoft2020">
+	                </div>
+	        </div>
+	        <div class="box-footer">
+	            <button type="submit" class="btn btn-primary" th:text="${department}==null?'Add':'Edit'">Submit</button>
+	        </div>
+	        </form>
+	    </div>
+	</section>
+
   </div>
   <!-- /.content-wrapper -->
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
 
   <!-- footbar -->
   <div th:replace="commons/bar::footbar"></div>
@@ -84,5 +83,7 @@
 <script th:src="@{/webjars/AdminLTE/3.0.5/plugins/chart.js/Chart.min.js}"></script>
 <script th:src="@{/webjars/AdminLTE/3.0.5/dist/js/demo.js}"></script>
 <script th:src="@{/webjars/AdminLTE/3.0.5/dist/js/pages/dashboard3.js}"></script>
+<!-- page script -->
+
 </body>
 </html>

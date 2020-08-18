@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iosoft2020.mapper.UserMapper">
+    <resultMap id="usersMap" type="user">
+        <association property="role"
+           column="rid"
+           select="com.iosoft2020.mapper.RoleMapper.getById">
+        </association>
+    </resultMap>
+
+    <select id="getById" parameterType="int" resultMap="usersMap">
+        SELECT * FROM sys_user where id=#{id};
+    </select>
+
+    <select id="getAll" resultMap="usersMap">
+        SELECT * FROM sys_user;
+    </select>
+
+    <insert id="save" parameterType="user">
+        insert into sys_user
+        (
+          username
+          , password
+          , status
+          , rid
+        )
+        values
+        (
+          #{username}
+          , #{password}
+          , #{status}
+          , #{role.id}
+
+        )
+    </insert>
+
+    <update id="update" parameterType="user">
+        update sys_user set
+          username = #{username}
+          , status = #{status}
+          , rid = #{role.id}
+		where
+		  id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        delete from sys_user
+		where id = #{id}
+    </delete>
+
+</mapper>
